@@ -39,7 +39,7 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
         wcerr << L"Failo sukurti nepavyko: " << utf8_filename.c_str() << endl;
         return;
     }
-    lt<<"<body>\n<em>Pagarbiai, Best Regards, Freundliche Grüße, </em><br /><br />\n<p style=\"padding-left:8px; margin:0\"><strong>"<<wstring_to_utf8(vardas_pavarde)<<"</strong><br />\n"<<wstring_to_utf8(pareigos)<<" <br />\n</p>\n"<<endl;
+    lt<<"<body>\n<em>Pagarbiai, Best Regards, Freundliche Grüße, </em><br /><br />\n<p style=\"padding-left:8px; margin:0\"><strong>"<<wstring_to_utf8(vardas_pavarde)<<"</strong><br />\n"<<wstring_to_utf8(pareigos)<<" <br /><br />\n</p>\n"<<endl;
 
     lt<<"<table style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333;\">\n"
       <<"<tr>\n  <td style=\"padding-left: 8px;\">\n  <a href=\"mailto:"<<wstring_to_utf8(elpastas)<<"\">\n"
