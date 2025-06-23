@@ -1,22 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product 
-    Id="*" 
-    Name="Logismart Parašo Generatorius" 
-    Language="1033" 
-    Version="1.0.0.0" 
-    Manufacturer="Logismart" 
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+
+  <Product
+    Id="*"
+    Name="Logismart Parašo Generatorius"
+    Language="1033"
+    Version="1.0.0.0"
+    Manufacturer="Logismart"
     UpgradeCode="0E3F1257-1F0B-44E5-9D6C-91E13EF18E9F"
     Codepage="65001">
 
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
-    <MediaTemplate />
+    
+    <MediaTemplate EmbedCab="yes" />
+    <UIRef Id="WixUI_Minimal" />
 
     <Feature Id="ProductFeature" Title="Main Feature" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
+
+    <!-- This property sets the text for the checkbox on the final dialog -->
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Open installation folder" />
+    
+    <!-- This property holds the target for our custom action. The warning is safe to ignore. -->
+    <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]" />
+
+    <!--
+    CORRECTED CUSTOM ACTION:
+    - The invalid 'Return' attribute has been removed.
+    - This is the standard way to define a UI custom action that runs as the user.
+    -->
+    <CustomAction Id="LaunchFolder"
+                  BinaryKey="WixCA"
+                  DllEntry="WixShellExec"
+                  Impersonate="yes"
+                  Execute="immediate" />
+
+    <!-- This schedules the action to run when the user clicks 'Finish' -->
+    <UI>
+      <Publish Dialog="ExitDialog"
+               Control="Finish"
+               Event="DoAction"
+               Value="LaunchFolder">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed</Publish>
+    </UI>
+
   </Product>
 
   <Fragment>
