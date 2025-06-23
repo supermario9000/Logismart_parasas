@@ -10,7 +10,7 @@ void aprasymas(wstring versija)
 }
 
 void praleiskenter() {
-    while (std::wcin.get() != L'\n'); //praleidzia \n ir taip programa nestringa
+    while (wcin.get() != L'\n'); //praleidzia \n ir taip programa nestringa
 }
 
 void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wstring &numeris)

@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/Marijus/Desktop/work/paraso programa"
+CMAKE_SOURCE_DIR = /mnt/c/Users/Marijus/Documents/GitHub/parasas
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/Marijus/Desktop/work/paraso programa/build"
+CMAKE_BINARY_DIR = /mnt/c/Users/Marijus/Documents/GitHub/parasas/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/Logismart_paraso_generatorius.exe.dir/clean
 CMakeFiles/Logismart_paraso_generatorius.exe.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logismart_paraso_generatorius.exe.dir/build.make CMakeFiles/Logismart_paraso_generatorius.exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logismart_paraso_generatorius.exe.dir/build.make CMakeFiles/Logismart_paraso_generatorius.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Users/Marijus/Desktop/work/paraso programa/build/CMakeFiles" --progress-num=1,2 "Built target Logismart_paraso_generatorius.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/Users/Marijus/Documents/GitHub/parasas/build/CMakeFiles --progress-num=1,2 "Built target Logismart_paraso_generatorius.exe"
 .PHONY : CMakeFiles/Logismart_paraso_generatorius.exe.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Logismart_paraso_generatorius.exe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Marijus/Desktop/work/paraso programa/build/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Marijus/Documents/GitHub/parasas/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Logismart_paraso_generatorius.exe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Marijus/Desktop/work/paraso programa/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Marijus/Documents/GitHub/parasas/build/CMakeFiles 0
 .PHONY : CMakeFiles/Logismart_paraso_generatorius.exe.dir/rule
 
 # Convenience name for target.
