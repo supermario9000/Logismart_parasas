@@ -34,7 +34,9 @@ void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wst
             wcout<<L"Bandykite įvesti vardą ir pavardę is naujo: ";
         }
         if(input==L"taip") break;
-        vardas_pavarde[0] = {'\0'};//pazymime masyva kaip tuscia
+        else if (input==L"ne") wcout<<L"Bandykite įvesti iš naujo: ";
+        vardas_pavarde=L"";
+        praleiskenter();
     }
     //=======================================
     //pareigu ivedimas
@@ -56,7 +58,9 @@ void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wst
             wcout<<L"Bandykite įvesti pareigas iš naujo: ";
         }
         if(input==L"taip") break;
-        pareigos[0] = {'\0'};
+        else if (input==L"ne") wcout<<L"Bandykite įvesti iš naujo: ";
+        pareigos=L"";
+        praleiskenter();
     }
     //=======================================
     //el pasto ivedimas
@@ -78,7 +82,9 @@ void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wst
             wcout<<L"Bandykite įvesti el. paštą iš naujo: ";
         }
         if(input==L"taip") break;
+        else if (input==L"ne") wcout<<L"Bandykite įvesti iš naujo: ";
         elpastas=L"";
+        praleiskenter();
     }
     //==============================================
     //numerio ivedimas
@@ -97,6 +103,7 @@ void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wst
             wcin.clear();
             wcout << e.what() << endl;
         }
+        praleiskenter();
     }
     
     if(input==L"taip")
@@ -117,7 +124,9 @@ void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wst
                 wcout<<L"Bandykite įvesti numerį iš naujo: ";
             }
             if(input==L"taip") break;
+            else if (input==L"ne") wcout<<L"Bandykite įvesti iš naujo: ";
             numeris=L"";
+            praleiskenter();
         }
     }
     else numeris=L"nera";//jei numerio nera, mes jo neisvesime
@@ -141,7 +150,7 @@ int main()
     wcin.imbue(locale());
     wcout.imbue(locale());
 
-    wstring vardas_pavarde, pareigos, elpastas, numeris, versija=L"0.00.0.11";
+    wstring vardas_pavarde, pareigos, elpastas, numeris, versija=L"0.01.1.11";
     wstring kalba; //versijavimas: 0.-UI versija; 00.-github; 0.-oficiali versija; 11-subversija
     aprasymas(versija);//parodome, kokia programa zmogus naudojasi
     ivedimas(vardas_pavarde, pareigos, elpastas, numeris);
@@ -158,6 +167,7 @@ int main()
             wcin.clear();
             wcout <<e.what() << endl;
         }
+        praleiskenter();
     }
     wcout<<kalba;
     paras_generator(vardas_pavarde, pareigos, elpastas, numeris, kalba);
