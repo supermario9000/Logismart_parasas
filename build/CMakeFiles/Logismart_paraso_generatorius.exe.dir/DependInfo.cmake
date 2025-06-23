@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/Marijus/Desktop/work/paraso programa/main.cpp" "CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o" "gcc" "CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o.d"
+  "/mnt/c/Users/Marijus/Documents/GitHub/parasas/main.cpp" "CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o" "gcc" "CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

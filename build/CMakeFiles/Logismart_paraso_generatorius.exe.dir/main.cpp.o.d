@@ -1,6 +1,6 @@
 CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o: \
- /mnt/c/Users/Marijus/Desktop/work/paraso\ programa/main.cpp \
- /mnt/c/Users/Marijus/Desktop/work/paraso\ programa/parasai.cpp \
+ /mnt/c/Users/Marijus/Documents/GitHub/parasas/main.cpp \
+ /mnt/c/Users/Marijus/Documents/GitHub/parasas/parasai.cpp \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/fstream \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/bits/requires_hosted.h \
  /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -392,6 +392,4 @@ CMakeFiles/Logismart_paraso_generatorius.exe.dir/main.cpp.o: \
  /usr/share/mingw-w64/include/stralign.h \
  /usr/share/mingw-w64/include/sec_api/stralign_s.h \
  /usr/share/mingw-w64/include/winsvc.h /usr/share/mingw-w64/include/mcx.h \
- /usr/share/mingw-w64/include/imm.h /usr/share/mingw-w64/include/fcntl.h \
- /usr/share/mingw-w64/include/io.h \
- /usr/lib/gcc/x86_64-w64-mingw32/13-win32/include/c++/codecvt
+ /usr/share/mingw-w64/include/imm.h

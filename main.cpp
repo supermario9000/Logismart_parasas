@@ -1,168 +1,146 @@
 #include "parasai.cpp"
 
-void aprasymas(wstring versija)
+void aprasymas(string versija)
 {
-    wcout<<L"Jūs naudojatės Logismart elektroninio parašo generatoriumi."<<endl;
-    wcout<<L"Visų virusų, kuriuos instaliavote su šia programa, autorių teisės ir patentai priklauso Išmanioji Logistika, UAB (2025)"<<endl;
-    wcout<<L"Jūs naudojatės ";
-    wcout<<versija<<L" versija.\n"<<endl;
-    wcout<<L"Gero naudojimo!"<<endl;
+    cout<<"Jus naudojates Logismart elektroninio paraso generatoriumi."<<endl;
+    cout<<"Visu virusu, kuriuos instaliavote su sia programa, autoriu teises ir patentai priklauso Ismanioji Logistika, UAB (2025)"<<endl;
+    cout<<"Jus naudojates ";
+    cout<<versija<<" versija.\n"<<endl;
+    cout<<"Gero naudojimo!"<<endl;
 }
 
-void praleiskenter() {
-    while (std::wcin.get() != L'\n'); //praleidzia \n ir taip programa nestringa
-}
-
-void ivedimas(wstring &vardas_pavarde, wstring &pareigos, wstring &elpastas, wstring &numeris)
+void ivedimas(string &vardas_pavarde, string &pareigos, string &elpastas, string &numeris)
 {
-    wstring input;
+    string input;
     //vardo ivedimas
     //naudojamas linijos nuskaitymui, vedant varda ir pavarde
-    wcout<<L"Įveskite savo vardą ir pavardę (Vardenis Pavardenis): ";
+    cout<<"Iveskite savo varda ir pavarde (Vardenis Pavardenis): ";
     while(true)
     {
-        getline(wcin,vardas_pavarde);
-        wcout<<L"Jūs įvedėte: '"<<vardas_pavarde<<L"' ar viskas teisingai?[taip/ne]:"<<endl;
+        getline(cin,vardas_pavarde);
+        cout<<"Jus ivedete: '"<<vardas_pavarde<<"' ar viskas teisingai?[taip/ne]:"<<endl;
         try {
-            wcin>>input;
-            praleiskenter();
-            if(wcin.fail() || (input!=L"taip"&&input!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+            cin>>input;
+            cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+            if(cin.fail() || (input!="taip"&&input!="ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
         }
         catch (const std::out_of_range& e) {
-            input=L"";
-            wcout << e.what() << endl;
-            wcout<<L"Bandykite įvesti vardą ir pavardę is naujo: ";
+            input="";
+            cout << e.what() << endl;
+            cout<<"Bandykite ivesti varda ir pavarde is naujo: ";
         }
-        if(input==L"taip") break;
+        if(input=="taip") break;
         vardas_pavarde[0] = {'\0'};//pazymime masyva kaip tuscia
     }
     //=======================================
     //pareigu ivedimas
-    wcin.clear();
-    praleiskenter();
-    wcout<<L"Įveskite savo einamas pareigas: ";
+    cin.clear();
+    cout<<"Iveskite savo einamas pareigas: ";
     while(true)
     {
-        getline(wcin, pareigos);
-        wcout<<L"Jūs įvedėte: '"<<pareigos<<L"' ar viskas teisingai?[taip/ne]:"<<endl;
+        getline(cin, pareigos);
+        cout<<"Jus ivedete: '"<<pareigos<<"' ar viskas teisingai?[taip/ne]:"<<endl;
         try {
-            wcin>>input;
-            praleiskenter();
-            if(wcin.fail() || (input!=L"taip"&&input!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+            cin>>input;
+            cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+            if(cin.fail() || (input!="taip"&&input!="ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
         }
         catch (const std::out_of_range& e) {
-            input=L"";
-            wcout << e.what() << endl;
-            wcout<<L"Bandykite įvesti pareigas iš naujo: ";
+            input="";
+            cout << e.what() << endl;
+            cout<<"Bandykite ivesti pareigas is naujo: ";
         }
-        if(input==L"taip") break;
+        if(input=="taip") break;
         pareigos[0] = {'\0'};
     }
     //=======================================
     //el pasto ivedimas
-    wcin.clear();
-    praleiskenter();
-    wcout<<L"Įveskite savo el. pašto adresą: ";
+    cin.clear();
+    cout<<"Iveskite savo el. pasto adresa: ";
     while(true)
     {
-        wcin>>elpastas;
-        wcout<<L"Jūs įvedėte: '"<<elpastas<<L"' ar viskas teisingai?[taip/ne]:"<<endl;
+        cin>>elpastas;
+        cout<<"Jus ivedete: '"<<elpastas<<"' ar viskas teisingai?[taip/ne]:"<<endl;
         try {
-            wcin>>input;
-            praleiskenter();
-            if(wcin.fail() || (input!=L"taip"&&input!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+            cin>>input;
+            cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+            if(cin.fail() || (input!="taip"&&input!="ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
         }
         catch (const std::out_of_range& e) {
-            input=L"";
-            wcout << e.what() << endl;
-            wcout<<L"Bandykite įvesti el. paštą iš naujo: ";
+            input="";
+            cout << e.what() << endl;
+            cout<<"Bandykite ivesti el. pasta is naujo: ";
         }
-        if(input==L"taip") break;
-        elpastas=L"";
+        if(input=="taip") break;
+        elpastas="";
     }
     //==============================================
     //numerio ivedimas
-    wcin.clear();
-    praleiskenter();
-    wcout<<L"Ar norėsite, kad paraše būtų jūsų tel. numeris?[taip/ne]: ";
+    cin.clear();
+    cout<<"Ar noresite, kad parase butu jusu tel. numeris?[taip/ne]: ";
     while(true)
     {
         try {
-            wcin>>input;
-            praleiskenter();
-            if(wcin.fail() || (input!=L"taip"&&input!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+            cin>>input;
+            cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+            if(cin.fail() || (input!="taip"&&input!="ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
             break; //gerai ivedus nutraukiame nesibaigianti cikla
         }
         catch (const std::out_of_range& e) {
-            wcin.clear();
-            wcout << e.what() << endl;
+            cin.clear();
+            cout << e.what() << endl;
         }
     }
     
-    if(input==L"taip")
+    if(input=="taip")
     {
-        wcout<<L"Įveskite savo telefono numerį (be tarpu): ";
+        cout<<"Iveskite savo telefono numeri (be tarpu): ";
         while(true)
         {
-            wcin>>numeris;
-            wcout<<L"Jūs įvedėte: '"<<numeris<<L"' ar viskas teisingai?[taip/ne]:"<<endl;
+            cin>>numeris;
+            cout<<"Jus ivedete: '"<<numeris<<"' ar viskas teisingai?[taip/ne]:"<<endl;
             try {
-                wcin>>input;
-                praleiskenter();
-                if(wcin.fail() || (input!=L"taip"&&input!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+                cin>>input;
+                cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+                if(cin.fail() || (input!="taip"&&input!="ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
             }
             catch (const std::out_of_range& e) {
-                input=L"";
-                wcout << e.what() << endl;
-                wcout<<L"Bandykite įvesti numerį iš naujo: ";
+                input="";
+                cout << e.what() << endl;
+                cout<<"Bandykite ivesti numeri is naujo: ";
             }
-            if(input==L"taip") break;
-            numeris=L"";
+            if(input=="taip") break;
+            numeris="";
         }
     }
-    else numeris=L"nera";//jei numerio nera, mes jo neisvesime
+    else numeris="nera";//jei numerio nera, mes jo neisvesime
     //===============================================
     //pabaiga.
 }
 
 int main()
 {
-    #ifdef _WIN32
-    #include <windows.h>
-    SetConsoleCP(CP_UTF8);               // Set console input code page
-    SetConsoleOutputCP(CP_UTF8);         // Set console output code page
-    _setmode(_fileno(stdout), _O_U8TEXT); // Enable wide output
-    _setmode(_fileno(stdin), _O_U16TEXT); // Enable wide input
-    #endif
-
-    //lietuviku ir vokisku simboliu (UTF 8) leidimas
-    locale::global(locale(""));
-
-    wcin.imbue(locale());
-    wcout.imbue(locale());
-
-    wstring vardas_pavarde, pareigos, elpastas, numeris, versija=L"0.00.0.11";
-    wstring kalba; //versijavimas: 0.-UI versija; 00.-github; 0.-oficiali versija; 11-subversija
+    string vardas_pavarde, pareigos, elpastas, numeris, versija="0.00.0.11";
+    string kalba; //versijavimas: 0.-UI versija; 00.-github; 0.-oficiali versija; 11-subversija
     aprasymas(versija);//parodome, kokia programa zmogus naudojasi
     ivedimas(vardas_pavarde, pareigos, elpastas, numeris);
-    wcout<<L"Kokios kalbos parašo norėsite?[lt/en/de]: ";
+    cout<<"Kokios kalbos paraso noresite?[lt/en/de]: ";
     while(true)
     {
         try {
-            wcin>>kalba;
-            praleiskenter();
-            if(wcin.fail() || (kalba!=L"lt"&&kalba!=L"en"&&kalba!=L"de") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'lt', 'en' arba 'de'!");
+            cin>>kalba;
+            cin.ignore(numeric_limits<streamsize>::max(), L'\n');
+            if(cin.fail() || (kalba!="lt"&&kalba!="en"&&kalba!="de") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'lt', 'en' arba 'de'!");
             break; //gerai ivedus nutraukiame nesibaigianti cikla
         }
         catch (const std::out_of_range& e) {
-            wcin.clear();
-            wcout <<e.what() << endl;
+            cin.clear();
+            cout <<e.what() << endl;
         }
     }
-    wcout<<kalba;
     paras_generator(vardas_pavarde, pareigos, elpastas, numeris, kalba);
-    wcout<<L"Ar patiko programa?:)"<<endl;
-    wstring patiko;
-    wcin>>patiko;
+    cout<<"Ar patiko programa?:)"<<endl;
+    string patiko;
+    cin>>patiko;
     return 0;
 }
