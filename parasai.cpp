@@ -20,7 +20,7 @@ string wstring_to_utf8(const wstring& wstr) {
     return converter.to_bytes(wstr);
 }
 
-void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas, wstring numeris, wstring kalba)
+void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas, wstring numeris, wstring kalba, wstring adresai, wstring vokadr)
 {
     #ifdef _WIN32
     SetConsoleCP(CP_UTF8);               // Set console input code page
@@ -39,7 +39,7 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
         wcerr << L"Failo sukurti nepavyko: " << utf8_filename.c_str() << endl;
         return;
     }
-    lt<<"<body>\n<em>Pagarbiai, Best Regards, Freundliche Grüße, </em><br /><br />\n<p style=\"padding-left:8px; margin:0\"><strong>"<<wstring_to_utf8(vardas_pavarde)<<"</strong><br />\n"<<wstring_to_utf8(pareigos)<<" <br />\n</p>\n"<<endl;
+    lt<<"<body>\n<em>Pagarbiai, Best Regards, Freundliche Grüße, </em><br /><br />\n<p style=\"padding-left:8px; margin:0\"><strong>"<<wstring_to_utf8(vardas_pavarde)<<"</strong><br />\n"<<wstring_to_utf8(pareigos)<<" <br /><br />\n</p>\n"<<endl;
 
     lt<<"<table style=\"font-family: Arial, sans-serif; font-size: 14px; color: #333;\">\n"
       <<"<tr>\n  <td style=\"padding-left: 8px;\">\n  <a href=\"mailto:"<<wstring_to_utf8(elpastas)<<"\">\n"
@@ -200,15 +200,88 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
       <<"LwkW1g6rElaln2ZdvEArwcLaYWFhYb0MCwsL62VYF94ZSbCwdlhYWD2sSQu0EiysHRYWVg9r1AIl\n"
       <<"wcLaYWFh9bAmLdBKsLB2WFhYPaxRC5QEC2uHhYXVw5q0QCvBwtphYWH1sEYtUBIsrB0WFlYPa9IC\n"
       <<"rQQLCwsLawLrZhsnwsLCwsJ6bMCxkQQLCwsLayDr7BgxOVhYWFhYH+wYJ8LCug8LC6sNOAmDhfUU\n"
-      <<"VgphpdDXsP4BZuA4AqOGvgQAAAAASUVORK5CYII=\" height=\"30\" style=\"border-radius:50%; height: 30px; margin-top:-5px\"/>\n    </a>\n  </td>\n</table>\n"<<endl;
+      <<"VgphpdDXsP4BZuA4AqOGvgQAAAAASUVORK5CYII=\" height=\"30\" style=\"border-radius:50%; height: 30px; margin-top:-5px\"/>\n    </a>\n  </td>\n</table>\n"<<endl; 
 
+    if(adresai==L"taip")
+    {
+        lt<<"<table style=\"font-size: 10px; padding-top: 5px;\"> \n <tr >\n  <td style=\"padding-top:7px; padding-left:8px;\">\n"
+          <<"<a href=\"https://www.logismart.lt/kontaktai\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAACWCAYAAAAouC1GAAAAAXNSR0IArs4c6QAAAbxJREFUeJzt\n"
+          <<"3cFtAjEUQEFvRBe50Ubqpw1uqSNpICv2YOm/oJkGDDz54LXNHmvI4/P+MzX2FV/fz2Ni3I+JQTkn\n"
+          <<"SIwgMYLECBIjSIwgMYLECBKzfTV6dQU+tRK+aup7mCExgsQIEiNIjCAxgsQIEiNIjCAxl1eZ77IC\n"
+          <<"323372KGxAgSI0iMIDGCxAgSI0iMIDGCxNymP8Aru0/J158kmCExgsQIEiNIjCAxgsQIEiNIjCAx\n"
+          <<"x9ReuXH/ZobECBIjSIwgMYLECBIjSIwgMYLECBIjSIwgMYLECBIjSIwgMYLECBIjSEz+nnr99Lt7\n"
+          <<"6m9OkBhBYgSJESRGkBhBYgSJESQmf0+9fq98NzMkRpAYQWIEiREkRpAYQWIEiREkxlvaTnhLG2sJ\n"
+          <<"0iNIjCAxgsQIEiNIjCAxgsSMrZbrp+mnniSYITGCxAgSI0iMIDGCxAgSI0iMIDGCxAgSI0iMIDGC\n"
+          <<"xAgSI0iMIDGCxAgSkz6Bvv7BP8rtZobECBIjSIwgMYLECBIjSIwgMYIAAAAAnErvLy976kwTJEaQ\n"
+          <<"GEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQGEFiBIkRJEaQmF87rU0UDuLHuAAAAABJRU5ErkJg\n"
+          <<"gg==\" height=\"15\" style=\"border-radius:50%; height: 15px; margin-top:-5px\"/></a>\n </td>\n"<<endl;
+
+        if(kalba==L"lt")
+        {
+          lt<<"<td>\n <strong>Galinės g. 1, Galinė, Vilniaus r.,</strong></br>\n Schlitzer str. 6, Frankfurt am Main,</br>\n"
+            <<"       Orber str. 10, Frankfurt am Main,</br>\n  1 Springwood Dr, Braintree,\n </td>\n <td style=\"padding-left:5px;\">\n"
+            <<"<strong><a href=\"https://www.logismart.lt/kontaktai\">Lietuva</a></strong></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/en/contacts\">United Kingdom</a>\n </td>\n </tr>\n </table>"<<endl;
+        }
+
+        else if(kalba==L"de" && vokadr==L"1")
+        {
+          lt<<"<td>\n Galinės g. 1, Galinė, Vilniaus r.,</br>\n <strong>Schlitzer str. 6, Frankfurt am Main,</strong></br>\n"
+            <<"       Orber str. 10, Frankfurt am Main,</br>\n  1 Springwood Dr, Braintree,\n </td>\n <td style=\"padding-left:5px;\">\n"
+            <<"<a href=\"https://www.logismart.lt/kontaktai\">Lietuva</a></br>\n"
+            <<"<strong><a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></strong></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/en/contacts\">United Kingdom</a>\n </td>\n </tr>\n </table>"<<endl;
+        }
+
+        else if(kalba==L"de" && vokadr==L"2")
+        {
+          lt<<"<td>\n Galinės g. 1, Galinė, Vilniaus r.,</br>\n Schlitzer str. 6, Frankfurt am Main,</br>\n"
+            <<"<strong>Orber str. 10, Frankfurt am Main,</strong></br>\n  1 Springwood Dr, Braintree,\n </td>\n <td style=\"padding-left:5px;\">\n"
+            <<"<a href=\"https://www.logismart.lt/kontaktai\">Lietuva</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<strong><a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></strong></br>\n"
+            <<"<a href=\"https://www.logismart.lt/en/contacts\">United Kingdom</a>\n </td>\n </tr>\n </table>"<<endl;
+        }
+
+        else {
+          lt<<"<td>\n Galinės g. 1, Galinė, Vilniaus r.,</br>\n Schlitzer str. 6, Frankfurt am Main,</br>\n"
+            <<"Orber str. 10, Frankfurt am Main,</br>\n  <strong>1 Springwood Dr, Braintree,</strong>\n </td>\n <td style=\"padding-left:5px;\">\n"
+            <<"<a href=\"https://www.logismart.lt/kontaktai\">Lietuva</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<a href=\"https://www.logismart.lt/de/kontakte\">Deutschland</a></br>\n"
+            <<"<strong><a href=\"https://www.logismart.lt/en/contacts\">United Kingdom</a></strong>\n </td>\n </tr>\n </table>"<<endl;
+        }
+
+    }
+
+    else{
+        if(kalba==L"lt")
+        {
+           lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
+             <<"<strong><a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a></strong>  "
+             <<"|  <a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a>  "
+             <<"|  <a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a>\n </td>\n </tr>\n  </table>\n"<<endl;
+        }
+        else if(kalba==L"en")
+        {
+            lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
+              <<"<a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a>  "
+              <<"|  <strong><a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a></strong>  "
+              <<"|  <a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a>\n </td>\n </tr>\n  </table>\n"<<endl;
+        }
+        else{
+            lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
+              <<"<a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a>  "
+              <<"|  <a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a>  "
+              <<"|  <strong><a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a></strong>\n </td>\n </tr>\n  </table>\n"<<endl;
+        }
+    }
+    
     if(kalba==L"lt")
     {
-        lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
-        <<"<strong><a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a></strong>  "
-        <<"|  <a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a>  "
-        <<"|  <a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a>\n </td>\n </tr>\n  </table>\n"<<endl;
-
         lt<<"<hr style=\"width: 100%; border: none; border-top: 2px solid black; margin-top: 20px;\">\n"
         <<"<p style=\"font-size: 10px;\">\n Išmanioji logistika, UAB<br />\n"
         <<"Galinės g. 1, Galinė, LT-14247, Vilniaus r. sav., Lietuva <br />\n"
@@ -221,11 +294,6 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
 
     else if(kalba==L"en")
     {
-        lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
-        <<"<a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a>  "
-        <<"|  <strong><a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a></strong>  "
-        <<"|  <a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a>\n </td>\n </tr>\n  </table>\n"<<endl;
-
         lt<<"<hr style=\"width: 100%; border: none; border-top: 2px solid black; margin-top: 20px;\">\n"
         <<"<p style=\"font-size: 10px;\">\n LOGISMART FULFILLMENT Ltd<br />\n"
         <<"1 Springwood Dr, Braintree CM7 2YN, United Kingdom <br />\n"
@@ -237,11 +305,6 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
     }
 
     else {
-        lt<<"<table>\n <td style=\"padding-top:7px; padding-left:8px;\">\n"
-        <<"<a href=\"https://logismart.lt/kontaktai/\" style=\" text-decoration: none;\">Lietuva</a>  "
-        <<"|  <a href=\"https://logismart.lt/en/contacts/\" style=\" text-decoration: none;\">United Kingdom</a>  "
-        <<"|  <strong><a href=\"https://logismart.lt/de/kontakte/\" style=\" text-decoration: none;\">Deutschland</a></strong>\n </td>\n </tr>\n  </table>\n"<<endl;
-
         lt<<"<hr style=\"width: 100%; border: none; border-top: 2px solid black; margin-top: 20px;\">\n"
         <<"<p style=\"font-size: 10px;\">\n Logismart GmbH<br />\n"
         <<"Orber Str. 10, 60386 Frankfurt am Main, Deutschland <br />\n"

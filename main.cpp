@@ -150,8 +150,8 @@ int main()
     wcin.imbue(locale());
     wcout.imbue(locale());
 
-    wstring vardas_pavarde, pareigos, elpastas, numeris, versija=L"0.01.1.11";
-    wstring kalba; //versijavimas: 0.-UI versija; 00.-github; 0.-oficiali versija; 11-subversija
+    wstring vardas_pavarde, pareigos, elpastas, numeris, versija=L"0.01.1.20";//versijavimas: 0.-UI versija; 00.-github; 0.-oficiali versija; 11-subversija
+    wstring kalba, adresai, vokadr; //kintamieji filtravimui
     aprasymas(versija);//parodome, kokia programa zmogus naudojasi
     ivedimas(vardas_pavarde, pareigos, elpastas, numeris);
     wcout<<L"Kokios kalbos parašo norėsite?[lt/en/de]: ";
@@ -169,8 +169,46 @@ int main()
         }
         praleiskenter();
     }
-    wcout<<kalba;
-    paras_generator(vardas_pavarde, pareigos, elpastas, numeris, kalba);
+
+    wcout<<L"Ar norėsite paraše matyti visų sandėlių adresus? Pasirinkdami \"ne\", paraše turėsite tik savo darbovietės šalį, parinktą pagal kalbą. [taip/ne]: ";
+    while(true)
+    {
+        praleiskenter();
+        try {
+            wcin>>adresai;
+            praleiskenter();
+            if(wcin.fail() || (adresai!=L"taip"&&adresai!=L"ne") ) throw out_of_range("Netinkama ivestis, galite ivesti tik 'taip' arba 'ne'!");
+            break; //gerai ivedus nutraukiame nesibaigianti cikla
+        }
+        catch (const std::out_of_range& e) {
+            wcin.clear();
+            wcout <<e.what() << endl;
+            wcout<<L"Bandykite iš naujo:";
+        }
+    }
+
+    if(adresai==L"taip"&&kalba==L"de") {
+        wcout<<L"Kuriame Vokietijos sandėlyje dirbate?"<<endl;
+        wcout<<L"1 - Schlitzer str."<<endl;
+        wcout<<L"2 - Orber str."<<endl;
+        while(true)
+        {
+            praleiskenter();
+            try {
+                wcin>>vokadr;
+                praleiskenter();
+                if(wcin.fail() || (vokadr!=L"1"&&vokadr!=L"2") ) throw out_of_range("Netinkama ivestis, galite ivesti tik '1' arba '2'!");
+                break; //gerai ivedus nutraukiame nesibaigianti cikla
+            }
+            catch (const std::out_of_range& e) {
+                wcin.clear();
+                wcout <<e.what() << endl;
+                wcout<<L"Bandykite iš naujo:";
+            }
+        }
+    }
+
+    paras_generator(vardas_pavarde, pareigos, elpastas, numeris, kalba, adresai, vokadr);
     wcout<<L"Ar patiko programa?:)"<<endl;
     wstring patiko;
     wcin>>patiko;
