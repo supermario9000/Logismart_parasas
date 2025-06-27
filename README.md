@@ -3,7 +3,8 @@
 Šiame dokumente galite pažiūrėti visas funkcijas, kurios buvo pridėtos su naujausiomis išleistomis versijomis.  
 Versijos programoje nesutampa su github versijomis.
 
-Šiuo metu programa nepalaikoma linux ir macOs sistemose.
+Šiuo metu programa nepalaikoma linux ir macOs sistemose. Kadangi neperku programų saugumo licensijos, programą windowsai mato kaip "virusą" ar "galimą virusą". Jei atidarius installer.msi jums išlenda mėlynas langas, reikia pasirinkti "read more" / "skaityti daugiau" ir leisti programą suinstaliuoti.  
+Blogiausiu atveju atsisiųstos programos paleisti nepavyks nes windows defenderis blokuos kaip virusą. Tokiu atveju reikia paspausti iššokusį windows defenderio langą (iššoka apačioje dešinėje) ir per parametrus parinkti, kad neblokuotų programos... Kol kas labai liūdnai su tokiu veikimu, bandau sutvarkyti.
 
 __Naudojimosi instrukcija__  
 
