@@ -37,13 +37,24 @@ _Serveriai.lt instrukcija_
     Adresai paryškinami pagal pasirinktą kalbą (vokietijos sandėliams pateikiamas papildomas pasirinkimas pagal adresą.)
 * Pridėtas lietuviškas sutikimas programos diegimo metu.
 
+Sugeneruotų parašų, su visais funkcionalumais pavyzdys:  
+![Example 2](https://github.com/user-attachments/assets/17e828b4-1315-4798-bc3b-7f9706c09860)
+
+
 ## __V.1.0 (lt_1)__
 
 Pirminė versija.
 
 Šios versijos funkcijos:
 * Konsolinė c++ aplikacija su įdiegimo .msi failu.
+* Nupieštos nuotraukos (išskyrus Logismart logotipą), kad nekiltų bėdų su autorių teisėmis (nors nelabai tikėtina, atsarga gėdos nedaro)
 * Vardo, pareigų, el. pašto suvedimas su patikrinimu.
 * Pasirinktinas telefono numerio suvedimas paraše. (Parašas generuojamas su arba be tel. nr.)
 * Base64 užkoduotos nuotraukos, kad užimtų mažiau vietos ir visuose paštuose būtų atvaizduojamos vienodai (Thunderbird, Roundcube, Gmail, ir t.t.)
+* Kiekviena nuotrauka nurodo į kažkokį adresą, taip neiškraipomos nuotraukos po išsiuntimo.
+* Pateikiamas kalbos pasirinkimas, pagal kurį sugeneruojami atitinkamai lietuviški, angliški ir vokiški rekvizitai, paryškinama darbovietė po logotipu.
 * Sugeneruojamas .html failas su parinktais parametrais ir iš karto paruoštas naudojimui.
+
+Sugeneruotų parašų, su visais funkcionalumais pavyzdys:  
+![Example 1](https://github.com/user-attachments/assets/24df9c2d-9fe7-431b-a898-99f5734915ba)  
+(Pavyzdyje nėra vokiškų rekvizitų, juos galite matyti antros versijos pavyzdyje.)
