@@ -16,30 +16,32 @@
     <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
     
     <MediaTemplate EmbedCab="yes" />
-    <UIRef Id="WixUI_Minimal" />
+
+    <!--
+    CHANGE 1: Switch from the minimal UI to a full-featured UI
+              that includes a license agreement dialog.
+    -->
+    <UIRef Id="WixUI_Mondo" />
+
+    <!--
+    CHANGE 2: Add this variable. It tells the WixUIExtension where to find
+              your custom license file. The Id "WixUILicenseRtf" is a
+              special, required Id.
+    -->
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
 
     <Feature Id="ProductFeature" Title="Main Feature" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
-
-    <!-- This property sets the text for the checkbox on the final dialog -->
-    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Open installation folder" />
     
-    <!-- This property holds the target for our custom action. The warning is safe to ignore. -->
+    <!-- This part for launching the folder after install remains the same. -->
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Open installation folder" />
     <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]" />
-
-    <!--
-    CORRECTED CUSTOM ACTION:
-    - The invalid 'Return' attribute has been removed.
-    - This is the standard way to define a UI custom action that runs as the user.
-    -->
     <CustomAction Id="LaunchFolder"
                   BinaryKey="WixCA"
                   DllEntry="WixShellExec"
                   Impersonate="yes"
                   Execute="immediate" />
-
-    <!-- This schedules the action to run when the user clicks 'Finish' -->
     <UI>
       <Publish Dialog="ExitDialog"
                Control="Finish"
@@ -49,6 +51,7 @@
 
   </Product>
 
+  <!-- The rest of your file remains unchanged -->
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
