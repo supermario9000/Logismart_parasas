@@ -34,7 +34,7 @@ _Serveriai.lt instrukcija_
 ## __V.1.1(2)__
 
 Ši versija buvo sukurta pataisyti nedidelę klaidą.  
-*Pataisytas pašto adreso linkas. Dabar paspaudus el. paštą paraše sistema iš karto atidarys langą, kuriame bus galima rašyti laiška tam, kuris psirašė.
+* Pataisytas pašto adreso linkas. Dabar paspaudus el. paštą paraše sistema iš karto atidarys langą, kuriame bus galima rašyti laiška tam, kuris psirašė.
 
 ## __V.1.1__
 
