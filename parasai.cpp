@@ -77,7 +77,7 @@ void paras_generator(wstring vardas_pavarde, wstring pareigos, wstring elpastas,
       <<"YgSJESRGkBhBYgSJEQQAAAAAAAAA+Bd+AVl5YMlLcAw3AAAAAElFTkSuQmCC\" height=\"15\" style=\"height:15px; margin-top:2px\"/><br /><br />\n</a>"<<endl;
     
     lt<<"</td>\n  <td>\n"
-      <<"<a href=\""<<wstring_to_utf8(elpastas)<<"\">"<<wstring_to_utf8(elpastas)<<"</a><br />"<<endl;
+      <<"<a href=\"mailto:"<<wstring_to_utf8(elpastas)<<"\">"<<wstring_to_utf8(elpastas)<<"</a><br />"<<endl;
     if(numeris!=L"nera")lt<<"<a href=\"tel:"<<wstring_to_utf8(numeris)<<"\">"<<wstring_to_utf8(numeris)<<"</a><br />"<<endl;
     lt<<"<a href=\"https://www.logismart.lt\" target=\"_blank\">www.logismart.lt</a> | <a href=\"https://www.logismart.lt/en\">en</a> | <a href=\"https://www.logismart.lt/de\">de</a>\n"
       <<"<br /><br />\n  </td>\n </tr>\n </table>"<<endl;
