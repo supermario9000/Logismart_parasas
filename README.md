@@ -31,6 +31,11 @@ _Serveriai.lt instrukcija_
 * Nukopijuoti visą parašą (Ctrl + A ; Ctrl + C).
 * Įklijuoti parašą ir išsaugoti pakeitimus.
 
+## __V.1.1(2)__
+
+Ši versija buvo sukurta pataisyti nedidelę klaidą.
+*Pataisytas pašto adreso linkas. Dabar paspaudus el. paštą paraše sistema iš karto atidarys langą, kuriame bus galima rašyti laiška tam, kuris psirašė.
+
 ## __V.1.1__
 
 Šios versijos atnaujinimai:
